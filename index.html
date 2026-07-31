@@ -1,18 +1,23 @@
-
-<!doctype html><html><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
 <title>Discount Calculator</title>
-</head><body>
-<header class="top"><div class="lbl">DISC</div><div id="disc">0</div></header>
-<main class="content">
+</head>
+<body>
+<div id="header">
+<div class="label">DISC</div>
+<div id="disc">0</div>
+</div>
+<div id="content">
 <label>Market<input id="market" inputmode="numeric"></label>
 <label>USD<input id="usd" inputmode="decimal"></label>
 <label>Buy<input id="buy" inputmode="numeric"></label>
 <label>Margin<input id="margin" inputmode="numeric"></label>
 <label>Diff<input id="diff" inputmode="numeric"></label>
 <button id="clear">Clear All</button>
-</main>
+</div>
 <script src="script.js"></script>
 </body></html>

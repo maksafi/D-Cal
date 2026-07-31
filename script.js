@@ -11,4 +11,15 @@ if(window.visualViewport){const vv=window.visualViewport;const form=document.get
 if('serviceWorker' in navigator)navigator.serviceWorker.register('service-worker.js');
 window.onload=()=>{calc();e.market.focus();}
 
-if(window.visualViewport){const vv=window.visualViewport;function moveDisc(){const kb=Math.max(0,innerHeight-vv.height);const d=document.getElementById('discPanel');if(d)d.style.bottom=(kb+12)+'px';}vv.addEventListener('resize',moveDisc);vv.addEventListener('scroll',moveDisc);moveDisc();}
+
+function moveDiscPanel(){
+  const panel=document.getElementById('discPane');
+  if(!panel || !window.visualViewport) return;
+  const kb=Math.max(0, window.innerHeight-window.visualViewport.height);
+  panel.style.transform = kb>0 ? `translateY(${-kb/2}px)` : 'translateY(0)';
+}
+if(window.visualViewport){
+  visualViewport.addEventListener('resize',moveDiscPanel);
+  visualViewport.addEventListener('scroll',moveDiscPanel);
+  moveDiscPanel();
+}

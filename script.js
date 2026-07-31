@@ -1,1 +1,12 @@
-const ids=['market','usd','buy','margin','diff'],e={};ids.forEach((id,i)=>{let x=document.getElementById(id);e[id]=x;x.onfocus=()=>setTimeout(()=>x.select(),0);x.onkeydown=v=>{if(v.key==='Enter'){v.preventDefault();if(i<4)e[ids[i+1]].focus();}};x.oninput=calc;});const p=document.getElementById('discPanel'),d=document.getElementById('disc');function N(v){return parseFloat(v)||0}function calc(){let m=N(e.market.value),u=N(e.usd.value),b=N(e.buy.value),mg=N(e.margin.value),df=N(e.diff.value);e.margin.className=mg<25?'green':mg>25?'red':'';e.diff.className=(df>=1&&df<=5)?'green':df>5?'red':'';let r=u?Math.round(m-((746.48/u)*(b+mg))-df):0;d.textContent=r;d.className=r>=15?'green':'red';}if(window.visualViewport){function up(){let kb=Math.max(0,innerHeight-visualViewport.height);p.style.bottom=(kb+12)+'px';}visualViewport.addEventListener('resize',up);visualViewport.addEventListener('scroll',up);up();}calc();
+
+const ids=['market','usd','buy','margin','diff'],e={};ids.forEach((id,i)=>{let x=document.getElementById(id);e[id]=x;x.value=localStorage.getItem(id)||'';x.onfocus=()=>setTimeout(()=>x.select(),0);x.oninput=()=>{localStorage.setItem(id,x.value);calc()};x.onkeydown=a=>{if(a.key==='Enter'){a.preventDefault();i<ids.length-1?e[ids[i+1]].focus():x.blur();}}});
+const d=document.getElementById('disc');const panel=document.getElementById('discPanel');
+function n(v){return parseFloat(v)||0}
+function calc(){let m=n(e.market.value),u=n(e.usd.value),b=n(e.buy.value),mg=n(e.margin.value),df=n(e.diff.value);
+e.margin.className=mg<25?'green':mg>25?'red':'';
+e.diff.className=df>=1&&df<=5?'green':df>5?'red':'';
+let r=u?Math.round(m-((746.48/u)*(b+mg))-df):0;d.textContent=r;d.className=r>=15?'green':'red';}
+document.getElementById('clear').onclick=()=>{ids.forEach(id=>{e[id].value='';localStorage.removeItem(id)});calc();e.market.focus();}
+if(window.visualViewport){const vv=window.visualViewport;const form=document.getElementById('form');function adj(){const kb=Math.max(0,window.innerHeight-vv.height);form.style.height=(vv.height)+'px';panel.style.bottom=(kb+12)+'px';}vv.addEventListener('resize',adj);vv.addEventListener('scroll',adj);adj();}
+if('serviceWorker' in navigator)navigator.serviceWorker.register('service-worker.js');
+window.onload=()=>{calc();e.market.focus();}

@@ -1,7 +1,7 @@
 
 html,body,#app{height:100%;margin:0;overflow:hidden;background:#0d1016;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
 #app{display:flex;flex-direction:column}
-#header{display:none;padding-top:calc(env(safe-area-inset-top) + 10px);display:flex;flex-direction:column;justify-content:center;align-items:center;background:#0d1016;border-bottom:1px solid #2a2f38}
+#header{flex:0 0 150px;padding-top:calc(env(safe-area-inset-top) + 10px);display:flex;flex-direction:column;justify-content:center;align-items:center;background:#0d1016;border-bottom:1px solid #2a2f38}
 .disc-label{letter-spacing:5px;color:#9aa2af}
 #disc{font-size:72px;font-weight:800;transition:.2s}
 #form{flex:1;overflow:auto;padding:22px}
@@ -11,5 +11,3 @@ input{font-size:30px;font-weight:700;padding:16px;border-radius:18px;border:none
 input:focus{outline:none;box-shadow:0 0 0 2px #4f8cff}
 .green{color:#32d74b!important}.red{color:#ff453a!important}
 button{margin-top:30px;width:100%;padding:18px;border:none;border-radius:18px;background:#3b82f6;color:#fff;font-size:24px;font-weight:700}
-
-#discPanel{position:fixed;left:12px;right:12px;bottom:12px;background:rgba(25,28,36,.96);backdrop-filter:blur(18px);border:1px solid #2d3440;border-radius:22px;padding:10px;text-align:center;transition:bottom .25s;z-index:1000}.cap{letter-spacing:4px;color:#9aa2af}

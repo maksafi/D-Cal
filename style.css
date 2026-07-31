@@ -1,11 +1,13 @@
 
-html,body{margin:0;height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#0d1016;color:#fff}
-#header{position:fixed;left:0;right:0;top:0;height:135px;padding-top:calc(env(safe-area-inset-top)+8px);background:rgba(13,16,22,.97);backdrop-filter:blur(18px);z-index:1000;border-bottom:1px solid rgba(255,255,255,.08);text-align:center}
-.label{margin-top:8px;color:#a4acb8;letter-spacing:4px;font-size:13px}
-#disc{font-size:64px;font-weight:700;transition:.2s}
-#content{position:absolute;left:0;right:0;top:135px;bottom:0;overflow:auto;-webkit-overflow-scrolling:touch;padding:20px;box-sizing:border-box;max-width:430px;margin:auto}
-label{display:block;margin:14px 0;font-size:13px;color:#b8c0cb}
-input{width:100%;box-sizing:border-box;margin-top:6px;padding:16px;border:none;border-radius:16px;background:#232833;color:#fff;font-size:22px}
-input:focus{outline:none;box-shadow:0 0 0 2px #5d8dff}
+html,body,#app{height:100%;margin:0;overflow:hidden;background:#0d1016;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+#app{display:flex;flex-direction:column}
+#header{flex:0 0 150px;padding-top:calc(env(safe-area-inset-top) + 10px);display:flex;flex-direction:column;justify-content:center;align-items:center;background:#0d1016;border-bottom:1px solid #2a2f38}
+.disc-label{letter-spacing:5px;color:#9aa2af}
+#disc{font-size:72px;font-weight:800;transition:.2s}
+#form{flex:1;overflow:auto;padding:22px}
+.row{display:grid;grid-template-columns:120px 1fr;align-items:center;gap:16px;margin:18px 0}
+.lbl{font-size:28px;font-weight:700}
+input{font-size:30px;font-weight:700;padding:16px;border-radius:18px;border:none;background:#272c36;color:#fff;width:100%;box-sizing:border-box}
+input:focus{outline:none;box-shadow:0 0 0 2px #4f8cff}
 .green{color:#32d74b!important}.red{color:#ff453a!important}
-button{width:100%;padding:16px;border:none;border-radius:16px;background:#3b82f6;color:#fff;font-size:17px;margin:20px 0}
+button{margin-top:30px;width:100%;padding:18px;border:none;border-radius:18px;background:#3b82f6;color:#fff;font-size:24px;font-weight:700}

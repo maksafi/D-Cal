@@ -1,0 +1,1 @@
+Layout redesign placeholder with left labels and fixed header.
